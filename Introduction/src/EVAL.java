@@ -68,6 +68,8 @@ public class EVAL
 				
 				System.out.println(VarmontantSalaire-VarmontantCharité);
 
+				VarImpot=33;
+				
 				/// montant devrait etre egale a Salaire initial moins les dons au charité(20%)
 				System.out.println("Merci d’avoir produit votre déclaration de revenus. D’après les informations fournies, nous avons calculé");
 				facture="Facture pour : "+VarPrenom + " " + VarNom + "\n \n";
@@ -75,12 +77,14 @@ public class EVAL
 				facture=facture + VarmontantSalaire+ " $" + "\n";
 				if(VarmontantCharité>0)
 				facture=facture + "Charité: \t"+ VarmontantCharité+" $" + "\n";
-				facture=facture + "impots : \t"+ String.format("%.2f", VarImpot) +"13%" + "\n";
+				facture=facture + "impots : \t"+ String.format("%.2f", VarImpot) +"%" + "\n";
 				facture=facture + "Total : \t"+ VarmontantSalaire + "\n";
+				
+				System.out.println(VarmontantSalaire-VarImpot);
+
 				facture=facture + "Remise: \t"+ + VarmontantCharité + "\n";
 				System.out.println(facture);
 
-				
 				
 				
 				
