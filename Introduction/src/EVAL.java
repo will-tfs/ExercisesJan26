@@ -11,7 +11,7 @@ public class EVAL
 			{
 				Scanner sc=new Scanner(System.in);
 				String VarNom,VarPrenom;
-				double payer = 0, VarmontantSalaire,VarmontantCharité,VarRevenueImpossable = 0,VarRevenueAvantImpots,VarImpot=0.0;
+				double Vart, payer = 0, VarmontantSalaire,VarmontantCharité = 0,VarImpot=0.0;
 				String facture;
 
 				System.out.println("Donner le nom ");
@@ -42,11 +42,11 @@ public class EVAL
 
 				if(VarmontantSalaire>=200000)
 				{
-					VarmontantCharité=VarmontantSalaire*0.2;
+					VarmontantCharité=VarmontantSalaire*0.4;
 				}
 				else if(VarmontantSalaire>=100000)
 				{
-					VarmontantCharité=VarmontantSalaire*0.2;
+					VarmontantCharité=VarmontantSalaire*0.3;
 				}
 				else if(VarmontantSalaire>=50000)
 				{
@@ -67,8 +67,6 @@ public class EVAL
 				 
 				
 				System.out.println(VarmontantSalaire-VarmontantCharité);
-
-				VarImpot=33;
 				
 				/// montant devrait etre egale a Salaire initial moins les dons au charité(20%)
 				System.out.println("Merci d’avoir produit votre déclaration de revenus. D’après les informations fournies, nous avons calculé");
@@ -77,13 +75,15 @@ public class EVAL
 				facture=facture + VarmontantSalaire+ " $" + "\n";
 				if(VarmontantCharité>0)
 				facture=facture + "Charité: \t"+ VarmontantCharité+" $" + "\n";
-				facture=facture + "impots : \t"+ String.format("%.2f", VarImpot) +"%" + "\n";
-				facture=facture + "Total : \t"+ VarmontantSalaire + "\n";
-				
-				System.out.println(VarmontantSalaire-VarImpot);
-
-				facture=facture + "Remise: \t"+ + VarmontantCharité + "\n";
+				facture=facture + "Remise : \t"+ + VarmontantCharité + "(-)$" + "\n";
 				System.out.println(facture);
+				
+				System.out.println("Montant soustrait d'impots");
+				System.out.println(VarmontantSalaire*0.2 );
+				System.out.println("Montant totale a Payer");
+				VarImpot=VarmontantSalaire*0.2;
+				System.out.println(VarmontantSalaire-VarImpot-VarmontantCharité);
+
 
 				
 				
