@@ -42,11 +42,11 @@ public class EVAL
 
 				if(VarmontantSalaire>=200000)
 				{
-					VarmontantCharité=VarmontantSalaire*0.4;
+					VarmontantCharité=VarmontantSalaire*0.2;
 				}
 				else if(VarmontantSalaire>=100000)
 				{
-					VarmontantCharité=VarmontantSalaire*0.3;
+					VarmontantCharité=VarmontantSalaire*0.2;
 				}
 				else if(VarmontantSalaire>=50000)
 				{
@@ -80,7 +80,7 @@ public class EVAL
 				
 				System.out.println("Montant soustrait d'impots");
 				System.out.println(VarmontantSalaire*0.2 );
-				System.out.println("Montant totale a Payer");
+				System.out.println("Montant totale que tu garde");
 				VarImpot=VarmontantSalaire*0.2;
 				System.out.println(VarmontantSalaire-VarImpot-VarmontantCharité);
 
